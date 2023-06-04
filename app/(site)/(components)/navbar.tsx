@@ -17,14 +17,14 @@ export default function Navbar(props: INavbarProps) {
   const [show, setShow] = useState(false);
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <nav className="bg-gray-900 border-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center">
           <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-lg font-bold">Logo</span>
         </Link>
         <button
           type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
           onClick={() => {
             setShow(!show);
           }}
