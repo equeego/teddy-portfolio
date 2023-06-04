@@ -13,19 +13,19 @@ export default async function Project({ params }: Props) {
   return (
     <div>
       <header className="flex items-center justify-between">
-        <h1 className="text-3xl drop-shadow font-extrabold">{project.name}</h1>
+        <h1 className="text-3xl drop-shadow font-extrabold">{project.name.en}</h1>
       </header>
 
       <div style={{width: '100%', height: '300px', position: 'relative', objectFit: 'cover'}} className="my-3 rounded-lg overflow-hidden">
         <Image
           src={project.image}
-          alt={project.name}
+          alt={project.name.en}
           fill
         />
       </div>
 
       <div className="text-lg text-gray-700 mt-5">
-        <PortableText value={project.content} />
+        <PortableText value={project.content.en} />
       </div>
     </div>
   );

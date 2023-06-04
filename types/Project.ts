@@ -3,10 +3,13 @@ import { PortableTextBlock } from "sanity";
 export type Project = {
   _id: string;
   _createAt: string;
-  name: string;
-  slug: string;
+  name: {
+    en: string;
+    fr: string;
+  };
   image: string;
-  image_alt: any;
-  url: string;
-  content: PortableTextBlock[];
+  content: {
+    en: PortableTextBlock[];
+    fr: PortableTextBlock[];
+  };
 };
