@@ -17,8 +17,7 @@ export default function Navbar(props: INavbarProps) {
 
   const [show, setShow] = useState(false);
 
-  const lng = localStorage.getItem('lng');
-  const [selectedLng, setSelectedLng] = useState(lng || 'en');
+  const [selectedLng, setSelectedLng] = useState('en');
   const [showDdlLng, setShowDdlLng] = useState(false);
 
   const renderDdlLang = () => {
@@ -38,7 +37,6 @@ export default function Navbar(props: INavbarProps) {
           <div className="cursor-pointer absolute left-0 flex flex-col justify-center w-[40px]" style={{ bottom: isMobile ? '-300%' : '-420%' }}>
             <div className="w-[45px] h-[50px] rounded-lg overflow-hidden cursor-pointer mb-2 p-2 bg-white shadow-md hover:bg-gray-100" onClick={() => {
               setSelectedLng('en');
-              localStorage.setItem('lng', 'en');
               setShowDdlLng(false);
             }}>
               <div className="relative rounded-lg overflow-hidden w-[30px] h-[30px] object-cover">
@@ -47,7 +45,6 @@ export default function Navbar(props: INavbarProps) {
             </div>
             <div className="w-[45px] h-[50px] rounded-lg overflow-hidden cursor-pointer mb-2 p-2 bg-white shadow-md hover:bg-gray-100" onClick={() => {
               setSelectedLng('fr');
-              localStorage.setItem('lng', 'fr');
               setShowDdlLng(false);
             }}>
               <div className="relative rounded-lg overflow-hidden w-[30px] h-[30px] object-cover">
