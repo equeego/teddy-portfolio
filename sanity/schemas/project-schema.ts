@@ -21,6 +21,25 @@ const project = {
       ]
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'object',
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'slug',
+          options: { source: 'name.en' }
+        },
+        {
+          title: 'FR',
+          name: 'fr',
+          type: 'slug',
+          options: { source: 'name.fr' }
+        }
+      ]
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',

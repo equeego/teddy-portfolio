@@ -1,11 +1,13 @@
 "use client";
-
 import { useState } from "react";
-import useWindowSize from "../(utils)/useWindowSize";
-import { Menu } from "@/types/Menu";
+import Select, { components } from 'react-select';
+const { Option, SingleValue, Control } = components;
+
 import Link from "next/link";
 import Image from "next/image";
 
+import useWindowSize from "../(utils)/useWindowSize";
+import { Menu } from "@/types/Menu";
 
 type INavbarProps = {
   menus: Menu[];
@@ -17,48 +19,62 @@ export default function Navbar(props: INavbarProps) {
 
   const [show, setShow] = useState(false);
 
-  const [selectedLng, setSelectedLng] = useState('en');
-  const [showDdlLng, setShowDdlLng] = useState(false);
+  const options = [
+    {
+      value: 'en',
+      label: (
+        <div className="w-[30px] h-[30px] relative object-cover rounded-lg overflow-hidden cursor-pointer">
+          <Image src="/images/en-flag.jpg" alt="EN" fill />
+        </div>
+      ),
+      image: '/images/en-flag.jpg',
+    },
+    {
+      value: 'fr',
+      label: (
+        <div className="w-[30px] h-[30px] relative object-cover rounded-lg overflow-hidden cursor-pointer">
+          <Image src="/images/fr-flag.jpg" alt="FR" fill />
+        </div>
+      ),
+      image: '/images/fr-flag.jpg',
+    },
+  ];
+
+  const [selectedLng, setSelectedLng] = useState<any>(options[0]);
 
   const renderDdlLang = () => {
+    const customStyles = {
+      control: (provided: any) => ({
+        ...provided,
+        border: 'none',
+        borderRadius: '4px',
+        minHeight: '36px',
+        boxShadow: 'none',
+        backgroundColor: 'transparent'
+      }),
+      option: (provided: any, state: any) => ({
+        ...provided,
+        backgroundColor: state.isSelected ? '#f7f7f7' : 'white',
+        color: state.isSelected ? '#333' : '#666',
+        padding: '8px 12px',
+      }),
+      indicatorsContainer: (provided: any, state: any) => ({
+        display: 'none!important'
+      }),
+    };
+
     return (
-      <div className="relative">
-        {selectedLng === 'en' && (
-          <div className="w-[30px] h-[30px] relative object-cover rounded-lg overflow-hidden cursor-pointer" onClick={() => setShowDdlLng(!showDdlLng)}>
-            <Image src="/images/en-flag.jpg" alt="Flag EN" fill />
-          </div>
-        )}
-        {selectedLng === 'fr' && (
-          <div className="w-[30px] h-[30px] relative object-cover rounded-lg overflow-hidden cursor-pointer" onClick={() => setShowDdlLng(!showDdlLng)}>
-            <Image src="/images/fr-flag.jpg" alt="Flag EN" fill />
-          </div>
-        )}
-        {showDdlLng && (
-          <div className="cursor-pointer absolute left-0 flex flex-col justify-center w-[40px]" style={{ bottom: isMobile ? '-300%' : '-420%' }}>
-            <div className="w-[45px] h-[50px] rounded-lg overflow-hidden cursor-pointer mb-2 p-2 bg-white shadow-md hover:bg-gray-100" onClick={() => {
-              setSelectedLng('en');
-              setShowDdlLng(false);
-            }}>
-              <div className="relative rounded-lg overflow-hidden w-[30px] h-[30px] object-cover">
-                <Image src="/images/en-flag.jpg" alt="Flag EN" fill />
-              </div>
-            </div>
-            <div className="w-[45px] h-[50px] rounded-lg overflow-hidden cursor-pointer mb-2 p-2 bg-white shadow-md hover:bg-gray-100" onClick={() => {
-              setSelectedLng('fr');
-              setShowDdlLng(false);
-            }}>
-              <div className="relative rounded-lg overflow-hidden w-[30px] h-[30px] object-cover">
-                <Image src="/images/fr-flag.jpg" alt="Flag FR" fill />
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
+      <Select
+        value={selectedLng}
+        options={options}
+        onChange={setSelectedLng}
+        styles={customStyles}
+      />
     );
   };
 
   return (
-    <nav className="bg-gray-900 border-gray-700">
+    <nav className="bg-white shadow-md">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 items-center">
         <Link href="/" className="flex items-center">
           <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-lg font-bold">Logo</span>
@@ -76,13 +92,13 @@ export default function Navbar(props: INavbarProps) {
           </button>
           {isMobile && renderDdlLang()}
         </div>
-        <div className={!isMobile ? 'flex' : 'w-full'}>
+        <div className={!isMobile ? 'flex items-center' : 'w-full'}>
           {(!isMobile || show) && (
             <div className="w-full md:block md:w-auto">
               <ul className={`flex font-medium rounded-lg ${isMobile ? 'flex-col p-4 mt-4' : 'flex-row'}`}>
                 {menus.map((menu) => (
                   <li key={menu._id}>
-                    <Link href={menu.slug !== 'portfolio' ? '/' : `/${menu.slug}`} className={`block text-white ${isMobile ? 'border border-white p-3 hover:bg-white hover:text-gray-900' : 'px-4 hover:underline'}`} aria-current="page">{menu.name}</Link>
+                    <Link href={menu.slug !== 'portfolio' ? '/' : `/${menu.slug}`} className={`block text-black ${isMobile ? 'border border-white p-3 hover:bg-white hover:text-gray-900' : 'px-4 hover:underline'}`} aria-current="page">{menu.name}</Link>
                   </li>
                   ))}
               </ul>
