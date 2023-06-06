@@ -1,8 +1,9 @@
-import Navbar from './(components)/navbar';
-import { getMenus } from "@/sanity/sanity-utils";
+import { Inter } from 'next/font/google';
+
+import Navbar from './components/navbar';
+import { AppContextProvider } from './context/app';
 
 import '../globals.css';
-import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,14 +17,20 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const menus = await getMenus();
   const isAdminRoute = false;
 
   return (
     <html lang="en">
       <body>
-        <Navbar menus={menus} />
-        <main className={`${inter.className} ${!isAdminRoute ? 'max-w-3xl mx-auto py-20' : ''}`}>{children}</main>
+        <AppContextProvider>
+          <>
+            <Navbar />
+            <main className={`${inter.className} ${!isAdminRoute ? 'max-w-3xl mx-auto py-20' : ''}`}>
+              {children}
+            </main>
+          </>
+        </AppContextProvider>
+        
       </body>
     </html>
   )

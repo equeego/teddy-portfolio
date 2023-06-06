@@ -1,4 +1,4 @@
-import { useMemo, useEffect, useState } from 'react';
+import { useMemo, useEffect, useState } from "react";
 
 interface ISize {
   width: number;
@@ -22,10 +22,10 @@ export default function useWindowSize(): ISize {
     };
     changeWindowSize();
 
-    window.addEventListener('resize', changeWindowSize);
+    window.addEventListener("resize", changeWindowSize);
 
     return () => {
-      window.removeEventListener('resize', changeWindowSize);
+      window.removeEventListener("resize", changeWindowSize);
     };
   }, []);
 

@@ -22,7 +22,7 @@ const project = {
     },
     {
       name: 'slug',
-      title: 'Slug',
+      title: 'Project url - Do not manually change the FR and EN values bellow, use the Generate button instead',
       type: 'object',
       fields: [
         {
