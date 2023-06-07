@@ -21,6 +21,23 @@ const project = {
       ],
     },
     {
+      name: "description",
+      title: "Small description of the project",
+      type: "object",
+      fields: [
+        {
+          title: "EN",
+          name: "en",
+          type: "string",
+        },
+        {
+          title: "FR",
+          name: "fr",
+          type: "string",
+        },
+      ],
+    },
+    {
       name: "slug",
       title:
         "Project url - Do not manually change the FR and EN values bellow, use the Generate button instead",

@@ -8,6 +8,7 @@ export async function getProjects(): Promise<IProject[]> {
       _id,
       _createdAt,
       name,
+      description,
       "slug": {
         "en": slug.en.current,
         "fr": slug.fr.current
@@ -25,6 +26,7 @@ export async function getProject(slug: string): Promise<IProject> {
       _id,
       _createdAt,
       name,
+      description,
       "slug": {
         "en": slug.en.current,
         "fr": slug.fr.current

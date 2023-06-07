@@ -59,7 +59,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow-md">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 items-center">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-10 py-4 items-center">
         <Link href="/" className="flex items-center">
           <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-lg font-bold">
             Logo

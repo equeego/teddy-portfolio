@@ -13,7 +13,7 @@ export default function Project({ project }: IProjectProps) {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="m-10">
       <header className="flex items-center justify-between">
         <h1 className="text-3xl drop-shadow font-extrabold">{t(project.name)}</h1>
       </header>

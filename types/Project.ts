@@ -2,8 +2,12 @@ import { PortableTextBlock } from "sanity";
 
 export type IProject = {
   _id: string;
-  _createAt: string;
+  _createdAt: string;
   name: {
+    en: string;
+    fr: string;
+  };
+  description: {
     en: string;
     fr: string;
   };

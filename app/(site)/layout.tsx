@@ -17,15 +17,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const isAdminRoute = false;
-
   return (
     <html lang="en">
       <body>
         <AppContextProvider>
           <>
             <Navbar />
-            <main className={`${inter.className} ${!isAdminRoute ? 'max-w-3xl mx-auto py-20' : ''}`}>
+            <main className={`${inter.className}`}>
               {children}
             </main>
           </>

@@ -1,9 +1,8 @@
+import { getHomePageBanner } from "@/sanity/sanity-utils";
+import Home from "./index";
 
-export default function Home() {
+export default async function SSRHome() {
+  const banner = await getHomePageBanner();
 
-  return (
-    <div>
-      This is our home page
-    </div>
-  )
+  return <Home banner={banner} />
 }

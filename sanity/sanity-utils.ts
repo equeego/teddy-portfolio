@@ -1,6 +1,4 @@
-import { getProjects, getProject } from './queries/project-queries';
+import { getProjects, getProject } from "./queries/project-queries";
+import { getHomePageBanner } from "./queries/homepage-queries";
 
-export {
-  getProjects,
-  getProject,
-};
+export { getProjects, getProject, getHomePageBanner };
