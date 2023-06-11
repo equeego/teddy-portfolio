@@ -1,8 +1,18 @@
+import { Metadata } from "next";
 import { getHomePageBanner } from "@/sanity/sanity-utils";
-import Home from "./index";
+import HomeBanner from "./components/HomeBanner";
+
+export const metadata: Metadata = {
+  title: 'Teddy R | Portfolio',
+  description: 'Ramarotafika Teddy Portfolio',
+}
 
 export default async function SSRHome() {
   const banner = await getHomePageBanner();
 
-  return <Home banner={banner} />
+  return (
+    <>
+      <HomeBanner banner={banner} />
+    </>
+  );
 }

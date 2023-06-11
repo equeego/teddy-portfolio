@@ -5,7 +5,7 @@ export const langs: ILang[] = [
   {
     value: 'en',
     label: (
-      <div className="w-[30px] h-[30px] relative object-cover rounded-lg overflow-hidden cursor-pointer">
+      <div className="w-[20px] h-[15px] relative object-cover rounded overflow-hidden cursor-pointer">
         <Image src="/images/en-flag.jpg" alt="EN" fill />
       </div>
     ),
@@ -13,7 +13,7 @@ export const langs: ILang[] = [
   {
     value: 'fr',
     label: (
-      <div className="w-[30px] h-[30px] relative object-cover rounded-lg overflow-hidden cursor-pointer">
+      <div className="w-[20px] h-[15px] relative object-cover rounded overflow-hidden cursor-pointer">
         <Image src="/images/fr-flag.jpg" alt="FR" fill />
       </div>
     ),
@@ -22,10 +22,9 @@ export const langs: ILang[] = [
 
 export const menus: IMenu[] =[
   {
-    en: 'Our services',
-    fr: 'Nos services',
-    // slug: '/services'
-    slug: '/'
+    en: 'Services',
+    fr: 'Services',
+    slug: '/services'
   },
   {
     en: 'Portfolio',
@@ -34,14 +33,12 @@ export const menus: IMenu[] =[
   },
   {
     en: 'The team',
-    fr: 'Notre équipe',
-    // slug: '/team'
-    slug: '/'
+    fr: "L'équipe",
+    slug: '/team'
   },
   {
-    en: 'Who we are',
-    fr: 'Qui sommes nous',
-    // slug: '/about'
-    slug: '/'
+    en: 'About',
+    fr: 'À propos',
+    slug: '/about'
   }
 ];
