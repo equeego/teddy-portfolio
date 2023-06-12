@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getHomePageBanner } from "@/sanity/sanity-utils";
 import HomeBanner from "./components/HomeBanner";
+import HomeServices from "./components/HomeServices";
 
 export const metadata: Metadata = {
   title: 'Teddy R | Portfolio',
@@ -13,6 +14,7 @@ export default async function SSRHome() {
   return (
     <>
       <HomeBanner banner={banner} />
+      <HomeServices />
     </>
   );
 }
