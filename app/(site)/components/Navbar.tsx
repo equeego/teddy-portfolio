@@ -105,7 +105,7 @@ export default function Navbar({ SEO }: Props) {
       <title>{`Teddy R | ${t(SEO_content.title)}`}</title>
       <meta name="description" content={t(SEO_content.description)} />
 
-      <nav className="bg-white shadow-md" ref={ref}>
+      <nav className="bg-white shadow-md sticky top-0 z-[999999]" ref={ref}>
         <div className="container flex flex-wrap items-center justify-between mx-auto p-6 items-center">
           <Link href="/" className="flex items-center" prefetch={false}>
             <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-lg font-bold">
