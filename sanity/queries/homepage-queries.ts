@@ -12,3 +12,23 @@ export async function getHomePageBanner(): Promise<any[]> {
     }`
   );
 }
+
+export async function getHomePageServices(): Promise<any[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "homepage_services"][0]{
+      _id,
+      title,
+      subtitle,
+    }`
+  );
+}
+
+export async function getHomePagePortfolio(): Promise<any[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "homepage_portfolio"][0]{
+      _id,
+      title,
+      subtitle,
+    }`
+  );
+}
