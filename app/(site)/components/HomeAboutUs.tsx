@@ -62,7 +62,6 @@ const HomeAboutUs = ({ titles, data }: Props) => {
   return (
     <section className="px-6 py-10 md:py-20"
         style={{
-          minHeight: "calc(100vh - 68px)",
           backgroundColor: "hsl(218, 41%, 15%)",
           backgroundImage:
             "radial-gradient(650px circle at 0% 0%,hsl(218, 41%, 35%) 15%,hsl(218, 41%, 30%) 35%,hsl(218, 41%, 20%) 75%,hsl(218, 41%, 19%) 80%,transparent 100%), radial-gradient(1250px circle at 100% 100%, hsl(218, 41%, 45%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%,transparent 100%)",

@@ -10,7 +10,3 @@
 .zoom_on_hover:hover .zoom_on_hover_img {
   transform: scale(1.2) !important;
 }
-
-body {
-  background-color: #f5f5f5;
-}

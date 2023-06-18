@@ -13,22 +13,21 @@ export default function Project({ project }: IProjectProps) {
   const { t } = useTranslation();
 
   return (
-    <div className="m-10">
-      <header className="flex items-center justify-between">
-        <h1 className="text-3xl drop-shadow font-extrabold">{t(project.name)}</h1>
-      </header>
-
-      <div style={{width: '100%', height: '300px', position: 'relative', objectFit: 'cover'}} className="my-3 rounded-lg overflow-hidden">
+    <>
+      <div className="w-full h-80 overflow-hidden relative">
         <Image
           src={project.image}
           alt={t(project.name)}
           fill
+          className="object-cover"
         />
       </div>
-
-      <div className="text-lg text-gray-700 mt-5">
-        <PortableText value={t(project.content)} />
+      <div className="container mx-auto py-10 md:py-20">
+        <h1 className="text-3xl drop-shadow font-extrabold text-center">{t(project.name)}</h1>
+        <div className="text-lg text-gray-700 mt-5">
+          <PortableText value={t(project.content)} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
