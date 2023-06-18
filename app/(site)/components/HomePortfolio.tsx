@@ -26,7 +26,7 @@ const HomePortfolio = ({ titles, data }: Props) => {
           {data.map((project) => (
             <Link key={`home-portfolio-${project._id}`} prefetch={false} href={`/portfolio/${t(project.slug)}`}
               className="project block rounded-lg overflow-hidden bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:scale-110 duration-700 transition-all">
-              <div className="relative overflow-hidden bg-cover bg-no-repeat h-[200px]">
+              <div className="relative overflow-hidden h-[200px]">
                 <Image src={project.image} width={200} height={200} alt={project.image_alt} style={{ height: 'calc(100% - 1px)', width: '100%' }} />
                 <svg className="absolute text-white left-0 bottom-0" xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 1440 320">
