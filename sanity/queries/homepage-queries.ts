@@ -32,3 +32,13 @@ export async function getHomePageProjects(): Promise<any[]> {
     }`
   );
 }
+
+export async function getHomePageTeam(): Promise<any[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "homepage_team"][0]{
+      _id,
+      title,
+      subtitle,
+    }`
+  );
+}

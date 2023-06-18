@@ -23,9 +23,9 @@ const HomeServices = ({ titles, data }: Props) => {
           </p>}
           
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className={`grid gap-6 lg:grid-cols-${data.length}`}>
           {data.map((service: any) => (
-            <Link href={t(service.slug)} prefetch={false} key={`service-home-${service._id}`} className="sm:text-center max-w-[300px] mx-auto hover:scale-110 duration-700 transition-all">
+            <Link href={`services/${t(service.slug)}`} prefetch={false} key={`home-services-${service._id}`} className="sm:text-center max-w-[300px] mx-auto hover:scale-110 duration-700 transition-all">
               <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
                 {service.icon && <Icon data={service.icon} width={40} height={40} /> }
               </div>

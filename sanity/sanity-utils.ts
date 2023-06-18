@@ -2,7 +2,8 @@ import { getSEO } from "./queries/seo-queries";
 import {
   getHomePageBanner,
   getHomePageServices,
-  getHomePageProjects
+  getHomePageProjects,
+  getHomePageTeam
 } from "./queries/homepage-queries";
 import {
   getProjects,
@@ -14,6 +15,11 @@ import {
   getService,
   getPromotedServices
 } from "./queries/service-queries";
+import {
+  getMembers,
+  getMember,
+  getPromotedMembers
+} from "./queries/team-queries";
 
 export {
   getSEO,
@@ -22,6 +28,7 @@ export {
   getHomePageBanner,
   getHomePageServices,
   getHomePageProjects,
+  getHomePageTeam,
 
   // PROJECTS
   getProjects,
@@ -32,4 +39,9 @@ export {
   getServices,
   getPromotedServices,
   getService,
+
+  // TEAM
+  getMembers,
+  getMember,
+  getPromotedMembers,
 };

@@ -1,6 +1,6 @@
 import { PortableTextBlock } from "sanity";
 
-export type IService = {
+export type IMember = {
   _id: string;
   _createdAt: string;
   name: {
@@ -15,7 +15,7 @@ export type IService = {
     en: string;
     fr: string;
   };
-  icon: any;
+  image: string;
   content: {
     en: PortableTextBlock[];
     fr: PortableTextBlock[];
