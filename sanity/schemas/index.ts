@@ -5,6 +5,7 @@ import homepage_services from "./homepage_services-schema";
 import homepage_portfolio from "./homepage_portfolio-schema";
 
 import project from "./project-schema";
+import service from "./service-schema";
 
 const schemas = [
   seo,
@@ -13,7 +14,8 @@ const schemas = [
   homepage_services,
   homepage_portfolio,
 
-  project
+  project,
+  service,
 ];
 
 export default schemas;

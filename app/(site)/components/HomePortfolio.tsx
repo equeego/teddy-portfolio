@@ -18,10 +18,10 @@ const HomePortfolio = ({ titles, data }: Props) => {
           "radial-gradient(650px circle at 0% 0%,hsl(218, 41%, 35%) 15%,hsl(218, 41%, 30%) 35%,hsl(218, 41%, 20%) 75%,hsl(218, 41%, 19%) 80%,transparent 100%), radial-gradient(1250px circle at 100% 100%, hsl(218, 41%, 45%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%,transparent 100%)",
       }}>
       <div className="container mx-auto px-6">
-        <h2 className={`${titles.subtitle ? 'mb-4' : 'mb-20'} text-3xl font-bold text-white`}>
+        <h2 className={`${titles.subtitle ? 'mb-4' : 'mb-10 md:mb-20'} text-3xl font-bold text-white`}>
           {t(titles.title)}
         </h2>
-        {titles.subtitle && <p className="mb-20 text-white">{t(titles.subtitle)}</p>}
+        {titles.subtitle && <p className="mb-10 md:mb-20 text-white">{t(titles.subtitle)}</p>}
         <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
           {data.map((project) => (
             <Link key={`home-portfolio-${project._id}`} prefetch={false} href={`/portfolio/${t(project.slug)}`}
@@ -37,7 +37,12 @@ const HomePortfolio = ({ titles, data }: Props) => {
               </div>
               <div className="p-6 bg-white">
                 <h5 className="mb-4 text-lg font-bold">{t(project.name)}</h5>
-                <p className="mb-4 text-neutral-500">{t(project.description)}</p>
+                <p className="mb-4 text-neutral-500 min-h-[80px]">
+                  {t((project.description)).length < 150
+                    ? t(project.description)
+                    : `${t(project.description).substring(0, 150)} ...`
+                  }
+                </p>
               </div>
             </Link>
           ))}

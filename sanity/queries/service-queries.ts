@@ -1,10 +1,10 @@
-import { IProject } from "@/types/Project";
+import { IService } from "@/types/Service";
 import { createClient, groq } from "next-sanity";
 import clientConfig from "../config/client-config";
 
-export async function getProjects(): Promise<IProject[]> {
+export async function getServices(): Promise<IService[]> {
   return createClient(clientConfig).fetch(
-    groq`*[_type == "project"]{
+    groq`*[_type == "service"]{
       _id,
       _createdAt,
       name,
@@ -13,16 +13,15 @@ export async function getProjects(): Promise<IProject[]> {
         "en": slug.en.current,
         "fr": slug.fr.current
       },
-      "image": image.asset->url,
-      "image_alt": image.alt,
+      "icon": icon,
       content
     }`
   );
 }
 
-export async function getPromotedProjects(): Promise<IProject[]> {
+export async function getPromotedServices(): Promise<IService[]> {
   return createClient(clientConfig).fetch(
-    groq`*[_type == "project"]{
+    groq`*[_type == "service"]{
       _id,
       _createdAt,
       name,
@@ -31,16 +30,15 @@ export async function getPromotedProjects(): Promise<IProject[]> {
         "en": slug.en.current,
         "fr": slug.fr.current
       },
-      "image": image.asset->url,
-      "image_alt": image.alt,
+      "icon": icon,
       content
     }[0...3]`
   );
 }
 
-export async function getProject(slug: string): Promise<IProject> {
+export async function getService(slug: string): Promise<IService> {
   return createClient(clientConfig).fetch(
-    groq`*[_type == "project" && (slug.en.current == $slug || slug.fr.current == $slug)][0]{
+    groq`*[_type == "service" && (slug.en.current == $slug || slug.fr.current == $slug)][0]{
       _id,
       _createdAt,
       name,
@@ -49,7 +47,7 @@ export async function getProject(slug: string): Promise<IProject> {
         "en": slug.en.current,
         "fr": slug.fr.current
       },
-      "image": image.asset->url,
+      "icon": icon,
       content
     }`,
     { slug }

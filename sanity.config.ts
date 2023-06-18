@@ -1,5 +1,6 @@
 import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk' ;
+import { iconPicker } from 'sanity-plugin-icon-picker';
+import { deskTool } from 'sanity/desk';
 import schemas from './sanity/schemas';
 
 const config = defineConfig({
@@ -8,7 +9,7 @@ const config = defineConfig({
   title: "Teddy personal website",
   apiVersion: "2023-06-02",
   basePath: "/admin",
-  plugins: [deskTool()], 
+  plugins: [deskTool(), iconPicker()], 
   schema: { types: schemas },
 });
 

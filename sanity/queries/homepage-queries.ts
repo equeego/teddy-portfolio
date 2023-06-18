@@ -23,7 +23,7 @@ export async function getHomePageServices(): Promise<any[]> {
   );
 }
 
-export async function getHomePagePortfolio(): Promise<any[]> {
+export async function getHomePageProjects(): Promise<any[]> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "homepage_portfolio"][0]{
       _id,

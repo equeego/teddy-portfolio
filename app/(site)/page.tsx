@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import {
   getHomePageBanner,
-  getPromotedProjects,
   getHomePageServices,
-  getHomePagePortfolio,
+  getPromotedServices,
+  getHomePageProjects,
+  getPromotedProjects,
 } from "@/sanity/sanity-utils";
 import HomeBanner from "./components/HomeBanner";
 import HomeServices from "./components/HomeServices";
@@ -16,14 +17,17 @@ export const metadata: Metadata = {
 
 export default async function SSRHome() {
   const banner = await getHomePageBanner();
-  const homeServices = await getHomePageServices();
-  const homeProjectsTitle = await getHomePagePortfolio();
+
+  const homeServicesTitle = await getHomePageServices();
+  const homeServices = await getPromotedServices();
+
+  const homeProjectsTitle = await getHomePageProjects();
   const homeProjects = await getPromotedProjects();
 
   return (
     <>
       <HomeBanner banner={banner} />
-      <HomeServices titles={homeServices} data={[]} />
+      <HomeServices titles={homeServicesTitle} data={homeServices} />
       <HomePortfolio titles={homeProjectsTitle} data={homeProjects} />
     </>
   );
