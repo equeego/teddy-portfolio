@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import useTranslation from '../utils/useTranslation';
-import { translate } from '../utils/translations';
-import Icon from './Icon';
+import Link from "next/link";
+import useTranslation from "../utils/useTranslation";
+import { translate } from "../utils/translations";
+import Icon from "./Icon";
 
 interface Props {
   titles: any;
@@ -30,18 +30,18 @@ const HomeServices = ({ titles, data }: Props) => {
               href={`services#${t(service.slug)}`}
               prefetch={false}
               key={`home-services-${service._id}`}
-              className="sm:text-center max-w-[300px] mx-auto hover:scale-110 duration-700 transition-all">
-              <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
+              className="text-center max-w-[300px] mx-auto hover:scale-110 duration-700 transition-all mb-10 sm:mb-0">
+              <div className="flex items-center justify-center mb-4 rounded-full bg-indigo-50 mx-auto w-24 h-24">
                 {service.icon && <Icon data={service.icon} width={40} height={40} />}
               </div>
               <h3 className="mb-2 font-semibold leading-5">{t(service.name)}</h3>
-              <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto min-h-[80px]">
+              <p className="max-w-md mb-3 text-sm text-gray-900 mx-auto sm:min-h-[80px]">
                 {t(service.description).length < 150
                   ? t(service.description)
                   : `${t(service.description).substring(0, 150)} ...`}
               </p>
-              <p className="mt-6 inline-flex items-center font-semibold transition-colors duration-200 capitalize text-sm">
-                {t(translate['read-more'])}
+              <p className="mt-2 sm:mt-6 inline-flex items-center font-semibold transition-colors duration-200 capitalize text-sm">
+                {t(translate["read-more"])}
               </p>
             </Link>
           ))}
