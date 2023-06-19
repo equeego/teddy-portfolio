@@ -1,17 +1,17 @@
-'use client';
-import { useState, useRef, useEffect, useMemo } from 'react';
-import Select, { SingleValue } from 'react-select';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+"use client";
+import { useState, useRef, useEffect, useMemo } from "react";
+import Select, { SingleValue } from "react-select";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
-import useWindowSize from '../utils/useWindowSize';
-import useTranslation from '../utils/useTranslation';
-import { useAppContext } from '../context/app';
+import useWindowSize from "../utils/useWindowSize";
+import useTranslation from "../utils/useTranslation";
+import { useAppContext } from "../context/app";
 
-import { langs, menus } from '../utils/constants';
+import { langs, menus } from "../utils/constants";
 
-import { ILang } from '../types/app-types';
-import { ISEO } from '@/types/global';
+import { ILang } from "../types/app-types";
+import { ISEO } from "@/types/global";
 
 interface Props {
   SEO: any;
@@ -36,28 +36,28 @@ export default function Navbar({ SEO }: Props) {
     const customStyles = {
       control: (provided: any) => ({
         ...provided,
-        border: '1px solid transparent',
-        borderRadius: '4px',
-        minHeight: '36px',
-        boxShadow: 'none',
-        backgroundColor: 'transparent',
-        ':hover': {
-          borderColor: 'transparent',
-          cursor: 'pointer'
+        border: "1px solid transparent",
+        borderRadius: "4px",
+        minHeight: "36px",
+        boxShadow: "none",
+        backgroundColor: "transparent",
+        ":hover": {
+          borderColor: "transparent",
+          cursor: "pointer"
         }
       }),
       option: (provided: any, state: any) => ({
         ...provided,
-        backgroundColor: state.isSelected ? '#f7f7f7' : 'white',
-        color: state.isSelected ? '#333' : '#666',
-        padding: '8px 12px'
+        backgroundColor: state.isSelected ? "#f7f7f7" : "white",
+        color: state.isSelected ? "#333" : "#666",
+        padding: "8px 12px"
       }),
       indicatorsContainer: () => ({
-        display: 'none!important'
+        display: "none!important"
       }),
       menu: (provided: any) => ({
         ...provided,
-        boxShadow: 'none'
+        boxShadow: "none"
       }),
       input: (provided: any) => ({
         ...provided,
@@ -83,10 +83,10 @@ export default function Navbar({ SEO }: Props) {
       }
     };
 
-    window.addEventListener('mousedown', handleOutSideClick);
+    window.addEventListener("mousedown", handleOutSideClick);
 
     return () => {
-      window.removeEventListener('mousedown', handleOutSideClick);
+      window.removeEventListener("mousedown", handleOutSideClick);
     };
   }, [ref]);
 
@@ -96,16 +96,16 @@ export default function Navbar({ SEO }: Props) {
     return idCurrentContent !== -1
       ? SEO[idCurrentContent]
       : {
-          _id: '',
-          pathname: '/',
-          title: { en: '', fr: '' },
-          description: { en: 'Ramarotafika Teddy Portfolio', fr: 'Ramarotafika Teddy Portfolio' }
+          _id: "",
+          pathname: "/",
+          title: { en: "", fr: "" },
+          description: { en: "Ramarotafika Teddy Portfolio", fr: "Ramarotafika Teddy Portfolio" }
         };
   }, [SEO, pathname]);
 
   return (
     <>
-      <title>{`Teddy R ${t(SEO_content.title) ? `| ${SEO_content.title}` : ''}`}</title>
+      <title>{`Teddy R ${t(SEO_content.title) ? `| ${t(SEO_content.title)}` : ""}`}</title>
       <meta name="description" content={t(SEO_content.description)} />
 
       <nav className="bg-white shadow-md sticky top-0 z-[999999]" ref={ref}>
@@ -115,7 +115,7 @@ export default function Navbar({ SEO }: Props) {
               Logo
             </span>
           </Link>
-          <div className={`flex ${isMobile ? 'flex-row-reverse w-[80%]' : 'flex-row'}`}>
+          <div className={`flex ${isMobile ? "flex-row-reverse w-[80%]" : "flex-row"}`}>
             <button
               type="button"
               className="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden focus:outline-none text-gray-400 hover:text-gray-700"
@@ -137,11 +137,11 @@ export default function Navbar({ SEO }: Props) {
             </button>
             {isMobile && renderDdlLang()}
           </div>
-          <div className={!isMobile ? 'flex items-center' : 'w-full'}>
+          <div className={!isMobile ? "flex items-center" : "w-full"}>
             {(!isMobile || show) && (
               <ul
                 className={`w-full md:w-auto flex font-medium rounded-lg ${
-                  isMobile ? 'flex-col p-0 mt-4' : 'flex-row'
+                  isMobile ? "flex-col p-0 mt-4" : "flex-row"
                 }`}>
                 {menus.map(menu => (
                   <li key={menu.en}>
@@ -151,8 +151,8 @@ export default function Navbar({ SEO }: Props) {
                       onClick={() => setShow(false)}
                       className={`block text-black ${
                         isMobile
-                          ? 'border border-white px-0 py-3 hover:bg-white hover:text-gray-900'
-                          : 'px-4 hover:underline'
+                          ? "border border-white px-0 py-3 hover:bg-white hover:text-gray-900"
+                          : "px-4 hover:underline"
                       }`}
                       aria-current="page">
                       {t(menu)}

@@ -1,13 +1,13 @@
-import { getProject } from "@/sanity/sanity-utils";
-import Project from "./index";
+import { getProject } from '@/sanity/sanity-utils';
+import PortfolioDetails from '../../components/PortfolioDetails';
 
 type Props = {
-  params: { project: string }
-}
+  params: { project: string };
+};
 
 export default async function SSRProject({ params }: Props) {
   const slug = params.project;
   const project = await getProject(slug);
 
-  return <Project project={project} />
+  return <PortfolioDetails project={project} />;
 }
