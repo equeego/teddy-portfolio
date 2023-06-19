@@ -1,9 +1,9 @@
-import { getProjects } from "@/sanity/sanity-utils";
-import Portfolio from "./index";
+import { getProjects, getHomePageProjects } from '@/sanity/sanity-utils';
+import PortfolioList from '../components/PortfolioList';
 
 export default async function SSRPortfolio() {
+  const homeProjectsTitle = await getHomePageProjects();
   const projects = await getProjects();
 
-  
-  return <Portfolio projects={projects} />
+  return <PortfolioList titles={homeProjectsTitle} projects={projects} />;
 }

@@ -1,4 +1,4 @@
-import { PortableTextBlock } from "sanity";
+import { PortableTextBlock } from 'sanity';
 
 export type IProject = {
   _id: string;
@@ -16,6 +16,7 @@ export type IProject = {
     fr: string;
   };
   image: string;
+  image_alt?: string;
   content: {
     en: PortableTextBlock[];
     fr: PortableTextBlock[];

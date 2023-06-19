@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 import {
   getHomePageBanner,
   getHomePageServices,
@@ -8,18 +8,19 @@ import {
   getHomePageTeam,
   getPromotedMembers,
   getHomePageAboutUs,
-  getPromotedAbouts,
-} from "@/sanity/sanity-utils";
-import HomeBanner from "./components/HomeBanner";
-import HomeServices from "./components/HomeServices";
-import HomePortfolio from "./components/HomePortfolio";
-import HomeTeam from "./components/HomeTeam";
-import HomeAboutUs from "./components/HomeAboutUs";
+  getPromotedAbouts
+} from '@/sanity/sanity-utils';
+import HomeBanner from './components/HomeBanner';
+import HomeServices from './components/HomeServices';
+import HomePortfolio from './components/HomePortfolio';
+import HomeTeam from './components/HomeTeam';
+import HomeAboutUs from './components/HomeAboutUs';
+import { IProject } from '@/types/Project';
 
 export const metadata: Metadata = {
   title: 'Teddy R | Portfolio',
-  description: 'Ramarotafika Teddy Portfolio',
-}
+  description: 'Ramarotafika Teddy Portfolio'
+};
 
 export default async function SSRHome() {
   const banner = await getHomePageBanner();
@@ -40,7 +41,7 @@ export default async function SSRHome() {
     <>
       <HomeBanner banner={banner} />
       <HomeServices titles={homeServicesTitle} data={homeServices} />
-      <HomePortfolio titles={homeProjectsTitle} data={homeProjects} />
+      <HomePortfolio titles={homeProjectsTitle} data={homeProjects || ([] as IProject[])} />
       <HomeTeam titles={homeTeamTitle} data={homeTeam} />
       <HomeAboutUs titles={homeAboutUsTitle} data={homeAboutUs} />
     </>
