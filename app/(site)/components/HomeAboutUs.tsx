@@ -18,7 +18,7 @@ const HomeAboutUs = ({ titles, data }: Props) => {
       href={`about-us/${t(element.slug)}`}
       prefetch={false}
       key={`home-about-${element._id}`}
-      className="zoom_on_hover sm:text-center md:text-left mx-auto bg-white grid grid-cols-1 sm:grid-cols-[30%_70%] hover:opacity-80 min-h-[204px] w-full mb-8 sm:mb-0 rounded-xl sm:rounded-none overflow-hidden">
+      className="zoom_on_hover text-center sm:text-left md:text-left mx-auto bg-white grid grid-cols-1 sm:grid-cols-[30%_70%] hover:opacity-80 min-h-[204px] w-full mb-8 sm:mb-0 rounded-xl sm:rounded-none overflow-hidden max-w-[350px] sm:max-w-[100%]">
       <div
         className="flex items-center justify-center overflow-hidden relative"
         style={{ minHeight: "150px" }}>
@@ -41,7 +41,7 @@ const HomeAboutUs = ({ titles, data }: Props) => {
       href={`about-us/${t(element.slug)}`}
       prefetch={false}
       key={`home-services-${element._id}`}
-      className="zoom_on_hover sm:text-center mx-auto relative overflow-hidden w-full">
+      className="zoom_on_hover text-center sm:text-left mx-auto relative overflow-hidden w-full max-w-[350px] sm:max-w-[100%]">
       <div className="absolute top-0 left-0 w-full h-full">
         <Image src={element.image} fill alt={element.image_alt} className="zoom_on_hover_img" />
       </div>

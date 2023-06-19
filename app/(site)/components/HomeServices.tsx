@@ -15,7 +15,7 @@ const HomeServices = ({ titles, data }: Props) => {
     <section className="px-6 py-10 md:py-20">
       <div className="mx-auto md:px-24 container">
         <div className="text-center mb-10 md:mb-20 md:mx-auto">
-          <h2 className="max-w-lg font-sans font-bold leading-none tracking-tight text-gray-900 text-3xl sm:text-4xl md:mx-auto mb-6">
+          <h2 className="max-w-lg font-sans font-bold leading-none tracking-tight text-gray-900 text-3xl lg:text-4xl mx-auto mb-6">
             {t(titles.title)}
           </h2>
           {titles.subtitle && (
@@ -35,7 +35,7 @@ const HomeServices = ({ titles, data }: Props) => {
                 {service.icon && <Icon data={service.icon} width={40} height={40} />}
               </div>
               <h3 className="mb-2 font-semibold leading-5">{t(service.name)}</h3>
-              <p className="max-w-md mb-3 text-sm text-gray-900 mx-auto sm:min-h-[80px]">
+              <p className="max-w-md mb-3 text-sm text-gray-900 mx-auto lg:min-h-[80px]">
                 {t(service.description).length < 150
                   ? t(service.description)
                   : `${t(service.description).substring(0, 150)} ...`}

@@ -34,10 +34,10 @@ const HomeBanner = ({ banner }: Props) => {
           </div>
         </div>
         <div
-          className="mb-12 lg:mb-0 z-10 absolute top-0 left-0 lg:relative w-screen h-full lg:w-auto lg:h-auto overflow-hidden lg:rounded-lg lg:shadow-lg"
-          style={{ minHeight: "250px" }}>
+          className="zoom_on_hover lg:mb-0 z-10 absolute top-0 left-0 lg:relative w-screen h-full lg:w-auto lg:h-auto overflow-hidden lg:rounded-lg lg:shadow-lg max-w-auto lg:max-w-[700px]"
+          style={{ minHeight: "350px" }}>
           <div className="relative w-full h-full" style={{ minHeight: "inherit" }}>
-            <Image src={banner.image} alt="Banner image" fill />
+            <Image src={banner.image} alt="Banner image" fill className="zoom_on_hover_img" />
             <div className="block lg:hidden absolute inset-0 bg-black bg-opacity-50 w-full h-full"></div>
           </div>
         </div>

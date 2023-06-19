@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
-import useTranslation from '../utils/useTranslation';
+import useTranslation from "../utils/useTranslation";
 // import { translate } from '../utils/translations';
-import { IProject } from '@/types/Project';
+import { IProject } from "@/types/Project";
 
 interface Props {
   project: IProject;
@@ -17,14 +17,15 @@ const PortfolioCard = ({ project }: Props) => {
       key={`card-projects-${project._id}`}
       href={`/portfolio/${t(project.slug)}`}
       prefetch={false}
-      className="block rounded-lg overflow-hidden bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:scale-105 duration-700 transition-all">
+      className="block rounded-lg overflow-hidden bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:scale-105 duration-700 transition-all mx-auto"
+      style={{ maxWidth: "350px" }}>
       <div className="relative overflow-hidden h-[200px]">
         <Image
           src={project.image}
           width={200}
           height={200}
-          alt={project.image_alt || ''}
-          style={{ height: 'calc(100% - 1px)', width: '100%', objectFit: 'cover' }}
+          alt={project.image_alt || ""}
+          style={{ height: "calc(100% - 1px)", width: "100%", objectFit: "cover" }}
         />
         <svg
           className="absolute left-0 bottom-0"
