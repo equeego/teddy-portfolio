@@ -12,14 +12,16 @@ import { langs, menus } from "../utils/constants";
 
 import { ILang } from "../types/app-types";
 import { ISEO } from "@/types/global";
+import Image from "next/image";
 
 interface Props {
   SEO: any;
+  logo: any;
 }
-export default function Navbar({ SEO }: Props) {
+export default function Navbar({ SEO, logo }: Props) {
   const pathname = usePathname();
   const ref = useRef(null);
-  const { isMobile } = useWindowSize();
+  const { isMobile, isPhone } = useWindowSize();
   const { t } = useTranslation();
   const { setLang } = useAppContext();
 
@@ -66,13 +68,15 @@ export default function Navbar({ SEO }: Props) {
     };
 
     return (
-      <Select
-        value={selectedLng}
-        options={langs.filter((lng: ILang) => lng.value !== selectedLng.value)}
-        onChange={handleChangeLang}
-        styles={customStyles}
-        // isDisabled={true}
-      />
+      <div className="relative z-[999999]">
+        <Select
+          value={selectedLng}
+          options={langs.filter((lng: ILang) => lng.value !== selectedLng.value)}
+          onChange={handleChangeLang}
+          styles={customStyles}
+          // isDisabled={true}
+        />
+      </div>
     );
   };
 
@@ -108,14 +112,25 @@ export default function Navbar({ SEO }: Props) {
       <title>{`Teddy R ${t(SEO_content.title) ? `| ${t(SEO_content.title)}` : ""}`}</title>
       <meta name="description" content={t(SEO_content.description)} />
 
-      <nav className="bg-white shadow-md sticky top-0 z-[999999]" ref={ref}>
-        <div className="container flex flex-wrap justify-between mx-auto p-6 items-center">
-          <Link href="/" className="flex items-center" prefetch={false}>
-            <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-lg font-bold">
-              Logo
-            </span>
+      <nav className="bg-white shadow-md sticky top-0 z-[999998] min-h-[76px]" ref={ref}>
+        <div className="max-w-6xl flex flex-wrap justify-between mx-auto py-2 px-6 items-center">
+          <Link
+            href="/"
+            className="flex items-center overflow-hidden relative"
+            prefetch={false}
+            style={{
+              width: isPhone ? 40 : 150,
+              height: isPhone ? 40 : 60
+            }}>
+            {logo && (
+              <Image
+                fill
+                src={!isPhone ? logo.logo_lg : logo.logo_sm}
+                alt={logo.title || "Teddy R"}
+              />
+            )}
           </Link>
-          <div className={`flex ${isMobile ? "flex-row-reverse w-[80%]" : "flex-row"}`}>
+          <div className={`flex ${isMobile ? "flex-row-reverse" : "flex-row"}`}>
             <button
               type="button"
               className="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden focus:outline-none text-gray-400 hover:text-gray-700"
@@ -153,7 +168,7 @@ export default function Navbar({ SEO }: Props) {
                         isMobile
                           ? "border border-white px-0 py-3 hover:bg-white hover:text-gray-900"
                           : "px-4 hover:underline"
-                      }`}
+                      } ${pathname.includes(menu.slug) ? "underline" : ""}`}
                       aria-current="page">
                       {t(menu)}
                     </Link>

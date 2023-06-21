@@ -19,7 +19,7 @@ const HomeBanner = ({ banner }: Props) => {
           "radial-gradient(650px circle at 0% 0%,hsl(218, 41%, 35%) 15%,hsl(218, 41%, 30%) 35%,hsl(218, 41%, 20%) 75%,hsl(218, 41%, 19%) 80%,transparent 100%), radial-gradient(1250px circle at 100% 100%, hsl(218, 41%, 45%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%,transparent 100%)"
       }}>
       <div
-        className="grid items-center gap-12 lg:grid-cols-2 container mx-0 lg:mx-auto text-center lg:text-left px-6 py-12 md:px-12 relative min-w-[100vw] lg:min-w-auto"
+        className="grid items-center gap-12 lg:grid-cols-2 container mx-0 lg:mx-auto text-center lg:text-left px-6 py-12 md:px-12 relative min-w-[100vw] lg:min-w-[1024px] max-w-7xl"
         style={{ minHeight: "inherit" }}>
         <div className="mt-12 lg:mt-0 z-20">
           <h1 className="mb-12 font-bold tracking-tight text-[hsl(218,81%,95%)] text-5xl md:text-6xl xl:text-7xl">

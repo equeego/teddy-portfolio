@@ -1,4 +1,4 @@
-import { getSEO } from "@/sanity/sanity-utils";
+import { getSEO, getLogo } from "@/sanity/sanity-utils";
 import Navbar from "./components/Navbar";
 import { Poppins } from "@next/font/google";
 
@@ -10,12 +10,13 @@ const poppins = Poppins({ weight: ["200", "300", "400", "700"], subsets: ["latin
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const SEO = await getSEO();
+  const logo = await getLogo();
   return (
     <html lang="en">
       <body className="bg-[#fbfbfb] text-base">
         <AppContextProvider>
           <>
-            <Navbar SEO={SEO} />
+            <Navbar SEO={SEO} logo={logo} />
             <main className={`${poppins.className}`}>{children}</main>
           </>
         </AppContextProvider>

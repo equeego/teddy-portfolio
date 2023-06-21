@@ -10,12 +10,14 @@ import page_service from "./page_service-schema";
 import page_portfolio from "./page_portfolio-schema";
 import page_team from "./page_team-schema";
 
+import logo from "./logo-schema";
 import project from "./project-schema";
 import service from "./service-schema";
 import member from "./member-schema";
 import about_us from "./about-us-schema";
 
 const schemas = [
+  logo,
   seo,
 
   page_home_banner,

@@ -1,3 +1,4 @@
+import { getLogo } from "./queries/logo-queries";
 import { getSEO } from "./queries/seo-queries";
 import {
   getHomePageBanner,
@@ -16,6 +17,7 @@ import { getPortfolioPageContent } from "./queries/page_portfolio-queries";
 import { getTeamPageContent } from "./queries/page_team-queries";
 
 export {
+  getLogo,
   getSEO,
 
   // HOME PAGE
