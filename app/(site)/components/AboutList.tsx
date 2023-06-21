@@ -11,7 +11,6 @@ interface Props {
   abouts: IAboutUs[];
 }
 export default function AboutList({ titles, abouts }: Props) {
-  console.log("HERE ====> ", { titles, abouts });
   const { t } = useTranslation();
   return (
     <section className="container max-w-5xl mx-auto px-6 md:px-0 py-10 md:py-20 text-center">

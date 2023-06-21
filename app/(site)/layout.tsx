@@ -17,7 +17,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <AppContextProvider>
           <>
             <Navbar SEO={SEO} logo={logo} />
-            <main className={`${poppins.className}`}>{children}</main>
+            <main className={`${poppins.className} pt-[76px]`}>{children}</main>
           </>
         </AppContextProvider>
       </body>

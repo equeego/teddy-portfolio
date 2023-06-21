@@ -112,7 +112,7 @@ export default function Navbar({ SEO, logo }: Props) {
       <title>{`Teddy R ${t(SEO_content.title) ? `| ${t(SEO_content.title)}` : ""}`}</title>
       <meta name="description" content={t(SEO_content.description)} />
 
-      <nav className="bg-white shadow-md sticky top-0 z-[999998] min-h-[76px]" ref={ref}>
+      <nav className="bg-white shadow-md fixed top-0 w-[100vw] z-[999998] min-h-[76px]" ref={ref}>
         <div className="max-w-6xl flex flex-wrap justify-between mx-auto py-2 px-6 items-center min-h-[inherit]">
           <Link
             href="/"
