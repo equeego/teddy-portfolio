@@ -113,7 +113,7 @@ export default function Navbar({ SEO, logo }: Props) {
       <meta name="description" content={t(SEO_content.description)} />
 
       <nav className="bg-white shadow-md sticky top-0 z-[999998] min-h-[76px]" ref={ref}>
-        <div className="max-w-6xl flex flex-wrap justify-between mx-auto py-2 px-6 items-center">
+        <div className="max-w-6xl flex flex-wrap justify-between mx-auto py-2 px-6 items-center min-h-[inherit]">
           <Link
             href="/"
             className="flex items-center overflow-hidden relative"

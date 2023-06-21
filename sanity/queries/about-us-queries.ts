@@ -1,8 +1,8 @@
-import { IProject } from "@/types/Project";
+import { IAboutUs } from "@/types/AboutUs";
 import { createClient, groq } from "next-sanity";
 import clientConfig from "../config/client-config";
 
-export async function getAbouts(): Promise<IProject[]> {
+export async function getAbouts(): Promise<IAboutUs[]> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "about_us"]{
       _id,
@@ -21,7 +21,7 @@ export async function getAbouts(): Promise<IProject[]> {
   );
 }
 
-export async function getPromotedAbouts(): Promise<IProject[]> {
+export async function getPromotedAbouts(): Promise<IAboutUs[]> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "about_us"]{
       _id,
@@ -40,7 +40,7 @@ export async function getPromotedAbouts(): Promise<IProject[]> {
   );
 }
 
-export async function getAbout(slug: string): Promise<IProject> {
+export async function getAbout(slug: string): Promise<IAboutUs> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "about_us" && (slug.en.current == $slug || slug.fr.current == $slug)][0]{
       _id,

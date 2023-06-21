@@ -41,7 +41,7 @@ const ServiceCard = ({ service, idx }: Props) => {
     <div
       ref={ref}
       id={t(service.slug)}
-      className={`grid gap-8 grid-cols-1 md:grid-cols-[6rem_auto] max-w-[1100px] mx-auto p-6 rounded-lg ${
+      className={`scroll-m-20 grid gap-8 grid-cols-1 md:grid-cols-[6rem_auto] max-w-[1100px] mx-auto p-6 rounded-lg ${
         expand ? "bg-indigo-50" : "bg-white"
       } mb-10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]`}>
       <div className="flex items-center justify-center mb-4 rounded-full bg-indigo-50 mx-auto w-24 h-24 order-first">
@@ -50,7 +50,9 @@ const ServiceCard = ({ service, idx }: Props) => {
       <div className="text-center sm:text-left">
         <h2 className="mb-3 text-lg font-bold">{t(service.name)}</h2>
         {expand ? (
-          <PortableText value={t(service.content)} />
+          <div className="text-sm text-gray-700">
+            <PortableText value={t(service.content)} />
+          </div>
         ) : (
           <p className="text-sm text-gray-900">{t(service.description)}</p>
         )}

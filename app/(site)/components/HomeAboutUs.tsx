@@ -15,7 +15,7 @@ const HomeAboutUs = ({ titles, data }: Props) => {
 
   const renderElement = (element: any) => (
     <Link
-      href={`about-us/${t(element.slug)}`}
+      href={`about#${t(element.slug)}`}
       prefetch={false}
       key={`home-about-${element._id}`}
       className="zoom_on_hover text-center sm:text-left md:text-left mx-auto bg-white grid grid-cols-1 sm:grid-cols-[30%_70%] hover:opacity-80 min-h-[204px] w-full mb-8 sm:mb-0 rounded-xl sm:rounded-none overflow-hidden max-w-[350px] sm:max-w-[100%]">
@@ -43,7 +43,7 @@ const HomeAboutUs = ({ titles, data }: Props) => {
   );
   const renderMainElement = (element: any, type?: string) => (
     <Link
-      href={`about-us/${t(element.slug)}`}
+      href={`about#${t(element.slug)}`}
       prefetch={false}
       key={`home-services-${element._id}`}
       className="zoom_on_hover text-center sm:text-left mx-auto relative overflow-hidden w-full max-w-[350px] sm:max-w-[100%]">

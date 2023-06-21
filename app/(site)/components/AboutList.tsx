@@ -2,15 +2,16 @@
 
 import useTranslation from "../utils/useTranslation";
 
-import TeamCard from "./TeamCard";
+import AboutCard from "./AboutCard";
 import { PortableText } from "@portabletext/react";
-import { IMember } from "@/types/Team";
+import { IAboutUs } from "@/types/AboutUs";
 
 interface Props {
   titles: any;
-  members: IMember[];
+  abouts: IAboutUs[];
 }
-export default function TeamList({ titles, members }: Props) {
+export default function AboutList({ titles, abouts }: Props) {
+  console.log("HERE ====> ", { titles, abouts });
   const { t } = useTranslation();
   return (
     <section className="container max-w-5xl mx-auto px-6 md:px-0 py-10 md:py-20 text-center">
@@ -25,8 +26,8 @@ export default function TeamList({ titles, members }: Props) {
       </div>
 
       <div className="mt-10">
-        {members.map((member: IMember, key: number) => (
-          <TeamCard key={member._id} member={member} idx={key} />
+        {abouts.map((about: IAboutUs, key: number) => (
+          <AboutCard key={about._id} about={about} idx={key} />
         ))}
       </div>
     </section>

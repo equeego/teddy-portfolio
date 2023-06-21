@@ -22,7 +22,7 @@ export default function PortfolioList({ titles, projects }: Props) {
             {t(titles.subtitle)}
           </p>
         )}
-        <div className="max-w-3xl mx-auto text-sm">
+        <div className="max-w-3xl mx-auto text-sm text-gray-700">
           <PortableText value={t(titles.content)} />
         </div>
       </div>

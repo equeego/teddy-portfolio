@@ -3,7 +3,11 @@ import { PortableTextBlock } from "sanity";
 export type IAboutUs = {
   _id: string;
   _createdAt: string;
-  name: {
+  title: {
+    en: string;
+    fr: string;
+  };
+  subtitle: {
     en: string;
     fr: string;
   };
@@ -16,6 +20,7 @@ export type IAboutUs = {
     fr: string;
   };
   image: string;
+  image_alt?: string;
   content: {
     en: PortableTextBlock[];
     fr: PortableTextBlock[];

@@ -9,6 +9,7 @@ import home_about_us from "./page_home_about-us-schema";
 import page_service from "./page_service-schema";
 import page_portfolio from "./page_portfolio-schema";
 import page_team from "./page_team-schema";
+import page_about from "./page_about-schema";
 
 import logo from "./logo-schema";
 import project from "./project-schema";
@@ -29,6 +30,7 @@ const schemas = [
   page_service,
   page_portfolio,
   page_team,
+  page_about,
 
   project,
   service,

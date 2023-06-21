@@ -15,6 +15,7 @@ import { getAbout, getAbouts, getPromotedAbouts } from "./queries/about-us-queri
 import { getServicePageContent } from "./queries/page_service-queries";
 import { getPortfolioPageContent } from "./queries/page_portfolio-queries";
 import { getTeamPageContent } from "./queries/page_team-queries";
+import { getAboutPageContent } from "./queries/page_about-queries";
 
 export {
   getLogo,
@@ -35,6 +36,9 @@ export {
 
   // TEAM PAGE
   getTeamPageContent,
+
+  // ABOUT US PAGE
+  getAboutPageContent,
 
   // PROJECTS
   getProjects,
