@@ -33,7 +33,7 @@ const HomeTeam = ({ titles, data }: Props) => {
               .join(" ");
             return (
               <Link
-                href={`team/${t(member.slug)}`}
+                href={`team#${t(member.slug)}`}
                 prefetch={false}
                 key={`hometeam--${member._id}`}
                 className="text-center max-w-[300px] mx-auto hover:scale-110 duration-700 transition-all drop-shadow-md">

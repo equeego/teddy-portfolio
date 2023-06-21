@@ -16,6 +16,7 @@ export type IMember = {
     fr: string;
   };
   image: string;
+  image_alt?: string;
   content: {
     en: PortableTextBlock[];
     fr: PortableTextBlock[];

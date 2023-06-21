@@ -1,13 +1,14 @@
 import seo from "./seo-schema";
 
-import homepage_banner from "./homepage_banner-schema";
-import homepage_services from "./homepage_services-schema";
-import homepage_portfolio from "./homepage_portfolio-schema";
-import homepage_team from "./homepage_team-schema";
-import home_about_us from "./homepage_about-us-schema";
+import page_home_banner from "./page_home_banner-schema";
+import page_home_services from "./page_home_services-schema";
+import page_home_portfolio from "./page_home_portfolio-schema";
+import page_home_team from "./page_home_team-schema";
+import home_about_us from "./page_home_about-us-schema";
 
-import service_page from "./service_page-schema";
-import portfolio_page from "./portfolio_page-schema";
+import page_service from "./page_service-schema";
+import page_portfolio from "./page_portfolio-schema";
+import page_team from "./page_team-schema";
 
 import project from "./project-schema";
 import service from "./service-schema";
@@ -17,14 +18,15 @@ import about_us from "./about-us-schema";
 const schemas = [
   seo,
 
-  homepage_banner,
-  homepage_services,
-  homepage_portfolio,
-  homepage_team,
+  page_home_banner,
+  page_home_services,
+  page_home_portfolio,
+  page_home_team,
   home_about_us,
 
-  service_page,
-  portfolio_page,
+  page_service,
+  page_portfolio,
+  page_team,
 
   project,
   service,

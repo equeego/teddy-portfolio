@@ -2,15 +2,15 @@
 
 import useTranslation from "../utils/useTranslation";
 
-import ServiceCard from "./ServiceCard";
+import MemberCard from "./MemberCard";
 import { PortableText } from "@portabletext/react";
-import { IService } from "@/types/Service";
+import { IMember } from "@/types/Team";
 
 interface Props {
   titles: any;
-  services: IService[];
+  members: IMember[];
 }
-export default function ServiceList({ titles, services }: Props) {
+export default function TeamList({ titles, members }: Props) {
   const { t } = useTranslation();
   return (
     <section className="container max-w-5xl mx-auto px-6 md:px-0 py-10 md:py-20 text-center">
@@ -21,8 +21,8 @@ export default function ServiceList({ titles, services }: Props) {
       </div>
 
       <div className="mt-10">
-        {services.map((service: IService, key: number) => (
-          <ServiceCard key={service._id} service={service} idx={key} />
+        {members.map((member: IMember, key: number) => (
+          <MemberCard key={member._id} member={member} idx={key} />
         ))}
       </div>
     </section>

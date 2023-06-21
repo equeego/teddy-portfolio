@@ -13,6 +13,7 @@ import { getAbout, getAbouts, getPromotedAbouts } from "./queries/about-us-queri
 
 import { getServicePageContent } from "./queries/page_service-queries";
 import { getPortfolioPageContent } from "./queries/page_portfolio-queries";
+import { getTeamPageContent } from "./queries/page_team-queries";
 
 export {
   getSEO,
@@ -29,6 +30,10 @@ export {
 
   // PORTFOLIO PAGE
   getPortfolioPageContent,
+
+  // TEAM PAGE
+  getTeamPageContent,
+
   // PROJECTS
   getProjects,
   getPromotedProjects,

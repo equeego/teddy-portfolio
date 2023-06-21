@@ -20,7 +20,7 @@ export default function PortfolioDetails({ project }: IProjectProps) {
       <div className="w-full h-80 overflow-hidden relative">
         <Image src={project.image} alt={t(project.name)} fill className="object-cover" />
       </div>
-      <div className="container mx-auto py-10 md:py-20">
+      <div className="container mx-auto px-6 md:px-0 py-10 md:py-20">
         <h1 className="text-3xl drop-shadow font-extrabold text-center">{t(project.name)}</h1>
         <div className="text-lg text-gray-700 mt-5">
           <PortableText value={t(project.content)} />
