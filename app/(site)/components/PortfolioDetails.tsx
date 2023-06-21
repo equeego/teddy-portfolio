@@ -1,9 +1,9 @@
-'use client';
-import { IProject } from '@/types/Project';
-import { PortableText } from '@portabletext/react';
-import Image from 'next/image';
+"use client";
+import { IProject } from "@/types/Project";
+import { PortableText } from "@portabletext/react";
+import Image from "next/image";
 
-import useTranslation from '../utils/useTranslation';
+import useTranslation from "../utils/useTranslation";
 
 interface IProjectProps {
   project: IProject;
@@ -14,6 +14,9 @@ export default function PortfolioDetails({ project }: IProjectProps) {
 
   return (
     <>
+      <title>{`Teddy R ${t(project.name) ? `| ${t(project.name)}` : ""}`}</title>
+      <meta name="description" content={t(project.description)} />
+
       <div className="w-full h-80 overflow-hidden relative">
         <Image src={project.image} alt={t(project.name)} fill className="object-cover" />
       </div>

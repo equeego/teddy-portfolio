@@ -24,7 +24,7 @@ const PortfolioCard = ({ project }: Props) => {
           src={project.image}
           width={200}
           height={200}
-          alt={project.image_alt || ""}
+          alt={project.image_alt || t(project.name)}
           style={{ height: "calc(100% - 1px)", width: "100%", objectFit: "cover" }}
         />
         <svg

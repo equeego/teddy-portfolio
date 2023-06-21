@@ -16,14 +16,14 @@ const ServiceCard = ({ service, idx }: Props) => {
   const { t } = useTranslation();
   const ref = useRef(null);
   const [expand, setExpand] = useState<boolean>(false);
-  const colDivisionMd = useMemo(
-    () => ((idx || 0) % 2 === 0 ? "md:grid-cols-[6rem_auto]" : "md:grid-cols-[auto_6rem]"),
-    [idx]
-  );
-  const iconOrderMd = useMemo(
-    () => ((idx || 0) % 2 === 0 ? "md:order-first" : "md:order-last"),
-    [idx]
-  );
+  // const colDivisionMd = useMemo(
+  //   () => ((idx || 0) % 2 === 0 ? "md:grid-cols-[6rem_auto]" : "md:grid-cols-[auto_6rem]"),
+  //   [idx]
+  // );
+  // const iconOrderMd = useMemo(
+  //   () => ((idx || 0) % 2 === 0 ? "md:order-first" : "md:order-last"),
+  //   [idx]
+  // );
   useEffect(() => {
     const handleOutSideClick = (event: any) => {
       if (!(ref.current as any)?.contains(event.target)) {
@@ -41,11 +41,10 @@ const ServiceCard = ({ service, idx }: Props) => {
     <div
       ref={ref}
       id={t(service.slug)}
-      className={`grid gap-8 grid-cols-1 ${colDivisionMd} max-w-[1100px] mx-auto border-b py-10 px-6 border-gray-200 ${
+      className={`grid gap-8 grid-cols-1 md:grid-cols-[6rem_auto] max-w-[1100px] mx-auto p-6 rounded-lg ${
         expand ? "bg-indigo-50" : "bg-white"
-      }`}>
-      <div
-        className={`flex items-center justify-center mb-4 rounded-full bg-indigo-50 mx-auto w-24 h-24 order-first ${iconOrderMd}`}>
+      } mb-10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]`}>
+      <div className="flex items-center justify-center mb-4 rounded-full bg-indigo-50 mx-auto w-24 h-24 order-first">
         {service.icon && <Icon data={service.icon} width={50} height={50} />}
       </div>
       <div className="text-center sm:text-left">

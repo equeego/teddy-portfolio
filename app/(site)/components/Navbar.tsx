@@ -90,7 +90,7 @@ export default function Navbar({ SEO }: Props) {
     };
   }, [ref]);
 
-  // AS params cannot be retrived from layout
+  // is not set on server side as translation is only defined on client
   const SEO_content = useMemo(() => {
     const idCurrentContent = SEO.findIndex((item: ISEO) => item.pathname === pathname);
     return idCurrentContent !== -1
@@ -99,7 +99,7 @@ export default function Navbar({ SEO }: Props) {
           _id: "",
           pathname: "/",
           title: { en: "", fr: "" },
-          description: { en: "Ramarotafika Teddy Portfolio", fr: "Ramarotafika Teddy Portfolio" }
+          description: { en: "Ramarotafika Teddy", fr: "Ramarotafika Teddy" }
         };
   }, [SEO, pathname]);
 

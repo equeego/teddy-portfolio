@@ -22,7 +22,12 @@ const HomeAboutUs = ({ titles, data }: Props) => {
       <div
         className="flex items-center justify-center overflow-hidden relative"
         style={{ minHeight: "150px" }}>
-        <Image className="zoom_on_hover_img" src={element.image} fill alt={element.image_alt} />
+        <Image
+          className="zoom_on_hover_img"
+          src={element.image}
+          fill
+          alt={element.image_alt || t(element.title)}
+        />
       </div>
       <div className="p-6">
         <h3 className="mb-4 font-semibold leading-5 capitalize">{t(element.title)}</h3>

@@ -4,28 +4,15 @@ import {
   getHomePageServices,
   getHomePageProjects,
   getHomePageTeam,
-  getHomePageAboutUs,
-} from "./queries/homepage-queries";
-import {
-  getProjects,
-  getProject,
-  getPromotedProjects
-} from "./queries/project-queries";
-import {
-  getServices,
-  getService,
-  getPromotedServices
-} from "./queries/service-queries";
-import {
-  getMembers,
-  getMember,
-  getPromotedMembers
-} from "./queries/team-queries";
-import {
-  getAbout,
-  getAbouts,
-  getPromotedAbouts
-} from "./queries/about-us-queries";
+  getHomePageAboutUs
+} from "./queries/page_home-queries";
+import { getProjects, getProject, getPromotedProjects } from "./queries/project-queries";
+import { getServices, getService, getPromotedServices } from "./queries/service-queries";
+import { getMembers, getMember, getPromotedMembers } from "./queries/team-queries";
+import { getAbout, getAbouts, getPromotedAbouts } from "./queries/about-us-queries";
+
+import { getServicePageContent } from "./queries/page_service-queries";
+import { getPortfolioPageContent } from "./queries/page_portfolio-queries";
 
 export {
   getSEO,
@@ -37,6 +24,11 @@ export {
   getHomePageTeam,
   getHomePageAboutUs,
 
+  // SERVICES PAGE
+  getServicePageContent,
+
+  // PORTFOLIO PAGE
+  getPortfolioPageContent,
   // PROJECTS
   getProjects,
   getPromotedProjects,

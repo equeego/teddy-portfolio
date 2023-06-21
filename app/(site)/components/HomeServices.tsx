@@ -12,7 +12,7 @@ interface Props {
 const HomeServices = ({ titles, data }: Props) => {
   const { t } = useTranslation();
   return (
-    <section className="px-6 py-10 md:py-20">
+    <section className="px-6 py-10 md:py-20 bg-white">
       <div className="mx-auto md:px-24 container">
         <div className="text-center mb-10 md:mb-20 md:mx-auto">
           <h2 className="max-w-lg font-sans font-bold leading-none tracking-tight text-gray-900 text-3xl lg:text-4xl mx-auto mb-6">

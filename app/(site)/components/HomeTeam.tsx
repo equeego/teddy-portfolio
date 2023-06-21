@@ -14,7 +14,7 @@ interface Props {
 const HomeTeam = ({ titles, data }: Props) => {
   const { t } = useTranslation();
   return (
-    <section className="px-6 py-10 md:py-20">
+    <section className="px-6 py-10 md:py-20 bg-white">
       <div className="mx-auto md:px-24 container">
         <div className="text-center mb-10 md:mb-20 md:mx-auto">
           <h2 className="max-w-lg font-sans font-bold leading-none tracking-tight text-gray-900 text-3xl sm:text-4xl md:mx-auto mb-6">
@@ -42,7 +42,7 @@ const HomeTeam = ({ titles, data }: Props) => {
                     src={member.image}
                     width={200}
                     height={200}
-                    alt={member.image_alt || " "}
+                    alt={member.image_alt || t(member.name)}
                     style={{ height: "calc(100% - 1px)", width: "100%" }}
                   />
                 </div>
