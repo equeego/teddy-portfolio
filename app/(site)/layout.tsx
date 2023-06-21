@@ -1,6 +1,6 @@
 import { getSEO, getLogo } from "@/sanity/sanity-utils";
 import Navbar from "./components/Navbar";
-import { Poppins } from "@next/font/google";
+import { Poppins } from "next/font/google";
 
 import { AppContextProvider } from "./context/app";
 
