@@ -45,7 +45,7 @@ const ServiceCard = ({ service, idx }: Props) => {
         expand ? "bg-indigo-50" : "bg-white"
       } mb-10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]`}>
       <div className="flex items-center justify-center mb-4 rounded-full bg-indigo-50 mx-auto w-24 h-24 order-first">
-        {service.icon && <Icon data={service.icon} width={50} height={50} />}
+        {/* {service.icon && <Icon data={service.icon} width={50} height={50} />} */}
       </div>
       <div className="text-center sm:text-left">
         <h2 className="mb-3 text-lg font-bold">{t(service.name)}</h2>

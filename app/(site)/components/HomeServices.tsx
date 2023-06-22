@@ -32,7 +32,7 @@ const HomeServices = ({ titles, data }: Props) => {
               key={`home-services-${service._id}`}
               className="text-center max-w-[300px] mx-auto hover:scale-110 duration-700 transition-all mb-10 sm:mb-0">
               <div className="flex items-center justify-center mb-4 rounded-full bg-indigo-50 mx-auto w-24 h-24">
-                {service.icon && <Icon data={service.icon} width={40} height={40} />}
+                {/* {service.icon && <Icon data={service.icon} width={40} height={40} />} */}
               </div>
               <h3 className="mb-2 font-semibold leading-5">{t(service.name)}</h3>
               <p className="max-w-md mb-3 text-sm text-gray-900 mx-auto lg:min-h-[80px]">

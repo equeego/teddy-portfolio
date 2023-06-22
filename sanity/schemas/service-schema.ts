@@ -11,14 +11,14 @@ const service = {
         {
           title: "EN",
           name: "en",
-          type: "string",
+          type: "string"
         },
         {
           title: "FR",
           name: "fr",
-          type: "string",
-        },
-      ],
+          type: "string"
+        }
+      ]
     },
     {
       name: "description",
@@ -28,14 +28,14 @@ const service = {
         {
           title: "EN",
           name: "en",
-          type: "string",
+          type: "string"
         },
         {
           title: "FR",
           name: "fr",
-          type: "string",
-        },
-      ],
+          type: "string"
+        }
+      ]
     },
     {
       name: "slug",
@@ -47,23 +47,15 @@ const service = {
           title: "EN",
           name: "en",
           type: "slug",
-          options: { source: "name.en" },
+          options: { source: "name.en" }
         },
         {
           title: "FR",
           name: "fr",
           type: "slug",
-          options: { source: "name.fr" },
-        },
-      ],
-    },
-    {
-      name: "icon",
-      title: "icon",
-      type: "iconPicker",
-      options: {
-        storeSvg: true
-      }
+          options: { source: "name.fr" }
+        }
+      ]
     },
     {
       name: "content",
@@ -74,23 +66,23 @@ const service = {
           title: "EN",
           name: "en",
           type: "array",
-          of: [{ type: "block" }],
+          of: [{ type: "block" }]
         },
         {
           title: "FR",
           name: "fr",
           type: "array",
-          of: [{ type: "block" }],
-        },
-      ],
-    },
+          of: [{ type: "block" }]
+        }
+      ]
+    }
   ],
   preview: {
     select: {
       title: "name.en",
-      subtitle: "name.fr",
-    },
-  },
+      subtitle: "name.fr"
+    }
+  }
 };
 
 export default service;

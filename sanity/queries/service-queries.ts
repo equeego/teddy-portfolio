@@ -13,7 +13,6 @@ export async function getServices(): Promise<IService[]> {
         "en": slug.en.current,
         "fr": slug.fr.current
       },
-      "icon": icon,
       content
     }`
   );
@@ -30,7 +29,6 @@ export async function getPromotedServices(): Promise<IService[]> {
         "en": slug.en.current,
         "fr": slug.fr.current
       },
-      "icon": icon,
       content
     }[0...3]`
   );
@@ -47,7 +45,6 @@ export async function getService(slug: string): Promise<IService> {
         "en": slug.en.current,
         "fr": slug.fr.current
       },
-      "icon": icon,
       content
     }`,
     { slug }
